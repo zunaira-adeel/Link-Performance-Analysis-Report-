@@ -1,52 +1,30 @@
-# Link-Performance-Analysis-Report-
-a Python program that analyzes and compares the performance of communication links using signal power, noise power, and data rate.
-print("=== TELECOMMUNICATION LINK PERFORMANCE ANALYZER ===")
+# Telecommunication Link Performance Analysis Report 
 
-num_links = int(input("How many links do you want to compare? (2 or 3): "))
+# Objective: 
+To develop a Python program that analyzes and compares the performance of communication links using signal power, noise power, and data rate.
+ # Scenario:
+ 
+ We compare 2 or 3 telecommunication links based on SNR and Performance Index.
+ 
+# Key Formulas:
+SNR = Signal Power / Noise Power Performance Index = SNR × Data Rate 
+ 
+# Algorithm:
+1. Start
+2. Ask user for number of communication links (2 or 3) 
+3. For each link: 
+• Input Signal Power, Noise Power, Data Rate 
+• Calculate SNR
+• Calculate Performance Index 
+4. Use if–elif–else to compare performances 
+5. Display results and best link 
+6. End
 
-# Empty lists to store values
-names = []
-performances = []
-snrs = []
 
-# Input and calculations 
-for i in range(num_links):
-    print(f"\n Enter details for Link {i+1}")
-
-    name = input("Enter Link Name: ")
-    signal = float(input("Signal Power (W): "))
-    noise = float(input("Noise Power (W): "))
-    data = float(input("Data Rate (kbps): "))
-
-    snr = signal / noiseb
-    performance = snr * data
-
-    names.append(name)
-    snrs.append(snr)
-    performances.append(performance)
-
-    print(f"SNR of {name}: {snr:.2f}")
-    print(f"Performance of {name}: {performance:.2f}")
-
-# Results summary
-print("\n=== RESULTS SUMMARY ===")
-for i in range(num_links):
-    print(f"{names[i]} → SNR = {snrs[i]:.2f}, Performance = {performances[i]:.2f}")
-
-# Compare using if-else to find best link
-if num_links == 2:
-    if performances[0] > performances[1]:
-        best = names[0]
-    else:
-        best = names[1]
-
-elif num_links == 3:
-    if performances[0] > performances[1] and performances[0] > performances[2]:
-        best = names[0]
-    elif performances[1] > performances[0] and performances[1] > performances[2]:
-        best = names[1]
-    else:
-        best = names[2]
-
-print(f"\n BEST PERFORMING LINK: {best} ")
-
+#Explanation: 
+• The program takes user input for signal power, noise power, and data rate.
+ • SNR is calculated using division. 
+• Performance Index multiplies SNR with data rate. 
+• Lists store all results for comparison. 
+• If–else statements determine the best link based on highest performance.
+ • The program prints all SNRs, performance values, and the top-performing link.

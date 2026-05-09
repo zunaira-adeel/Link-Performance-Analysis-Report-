@@ -1,0 +1,52 @@
+# Link-Performance-Analysis-Report-
+a Python program that analyzes and compares the performance of communication links using signal power, noise power, and data rate.
+print("=== TELECOMMUNICATION LINK PERFORMANCE ANALYZER ===")
+
+num_links = int(input("How many links do you want to compare? (2 or 3): "))
+
+# Empty lists to store values
+names = []
+performances = []
+snrs = []
+
+# Input and calculations 
+for i in range(num_links):
+    print(f"\n Enter details for Link {i+1}")
+
+    name = input("Enter Link Name: ")
+    signal = float(input("Signal Power (W): "))
+    noise = float(input("Noise Power (W): "))
+    data = float(input("Data Rate (kbps): "))
+
+    snr = signal / noiseb
+    performance = snr * data
+
+    names.append(name)
+    snrs.append(snr)
+    performances.append(performance)
+
+    print(f"SNR of {name}: {snr:.2f}")
+    print(f"Performance of {name}: {performance:.2f}")
+
+# Results summary
+print("\n=== RESULTS SUMMARY ===")
+for i in range(num_links):
+    print(f"{names[i]} → SNR = {snrs[i]:.2f}, Performance = {performances[i]:.2f}")
+
+# Compare using if-else to find best link
+if num_links == 2:
+    if performances[0] > performances[1]:
+        best = names[0]
+    else:
+        best = names[1]
+
+elif num_links == 3:
+    if performances[0] > performances[1] and performances[0] > performances[2]:
+        best = names[0]
+    elif performances[1] > performances[0] and performances[1] > performances[2]:
+        best = names[1]
+    else:
+        best = names[2]
+
+print(f"\n BEST PERFORMING LINK: {best} ")
+

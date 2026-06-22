@@ -21,7 +21,7 @@ SNR = Signal Power / Noise Power Performance Index = SNR × Data Rate
 6. End
 
 
-# Explanation: 
+#  Explanation: 
 • The program takes user input for signal power, noise power, and data rate.
 • SNR is calculated using division. 
 • Performance Index multiplies SNR with data rate. 
